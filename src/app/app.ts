@@ -1,12 +1,13 @@
-import { Component, signal } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Menu } from "./component/menu/menu";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Menu],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('ncu-pony-racer');
+  @HostBinding('class') protected readonly hostClasses = 'h-screen';
 }

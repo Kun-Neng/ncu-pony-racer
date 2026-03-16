@@ -1,6 +1,23 @@
-# NcuPonyRacer
+# NCU Pony Racer
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.2.
+
+## Architecture
+
+```mermaid
+graph TD
+  NCUPonyracer["NCU Ponyracer"] --> Menu
+  NCUPonyracer --> Home
+  NCUPonyracer --> Races
+  Menu
+  Races --> Race1
+  Races --> Race2
+  Race1 --> Pony1
+  Race1 --> Pony2
+  Race1 --> Pony3
+  Race2 --> Pony4
+  Race2 --> Pony5
+```
 
 ## Development server
 
@@ -53,6 +70,24 @@ ng e2e
 ```
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Run [`chrome-devtools-mcp`](https://github.com/ChromeDevTools/chrome-devtools-mcp)
+
+1. Open Chrome
+    - On Windows: Launch PowerShell by Administrator
+      ```bash
+      & "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir="%TEMP%\chrome-mcp-profile"
+      ```
+    - On MacOS
+      ```bash
+      /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome \ --remote-debugging-port=9222 \ --user-data-dir=/tmp/chrome-mcp-profile
+      ```
+
+2. Start `chrome-devtools`
+
+3. Serve the website
+
+4. Ask something about the website under `Agent` mode
 
 ## Additional Resources
 

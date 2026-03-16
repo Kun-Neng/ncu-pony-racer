@@ -9,7 +9,6 @@ graph TD
   NCUPonyracer["NCU Ponyracer"] --> Menu
   NCUPonyracer --> Home
   NCUPonyracer --> Races
-  Menu
   Races --> Race1
   Races --> Race2
   Race1 --> Pony1

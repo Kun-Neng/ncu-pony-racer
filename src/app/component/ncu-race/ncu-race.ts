@@ -25,13 +25,31 @@ export class NcuRace {
   );
 
   protected readonly ponies = signal<Array<PonyModel>>([]);
+  protected readonly selectedPony = signal<PonyModel | null>(null);
 
   constructor() {
     effect(() => {
       const raceData = this.race();
+
       if (raceData?.ponies) {
         this.ponies.set([...raceData.ponies]);
+
+        const savedPonyId = this.raceService.getSelectedPonyId(raceData.id);
+        if (savedPonyId) {
+          const savedPony = raceData.ponies.find(p => p.id === savedPonyId);
+          if (savedPony) {
+            this.selectedPony.set(savedPony);
+          }
+        }
       }
     });
+  }
+
+  protected handlePonyClicked(pony: PonyModel): void {
+    this.selectedPony.set(pony);
+    const raceId = this.race()?.id;
+    if (raceId) {
+      this.raceService.saveSelectedPony(raceId, pony.id);
+    }
   }
 }

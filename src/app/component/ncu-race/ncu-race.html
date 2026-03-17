@@ -15,8 +15,9 @@
         <h3 class="text-3xl font-bold text-gray-900 mb-6">🐴 Racing Ponies</h3>
         <div class="flex flex-col gap-6">
           @for (pony of ponies(); track pony.id) {
-            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-200">
-              <app-ncu-pony [ponyModel]="pony"></app-ncu-pony>
+            <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-200"
+              [class.ring-2]="selectedPony()?.id === pony.id" [class.ring-violet-500]="selectedPony()?.id === pony.id">
+              <app-ncu-pony [ponyModel]="pony" (ponyClicked)="handlePonyClicked($event)"></app-ncu-pony>
             </div>
           }
         </div>

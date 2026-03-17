@@ -75,7 +75,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 1. Open Chrome
     - On Windows: Launch PowerShell
       ```bash
-      & "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir=$env:TEMP\chrome-mcp-profile --no-default-browser-check --no-first-run
+      & "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir="C:\TEMP\chrome-mcp-profile"
       ```
     - On MacOS
       ```bash

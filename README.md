@@ -77,6 +77,11 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
       ```bash
       & "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222 --user-data-dir="C:\TEMP\chrome-mcp-profile"
       ```
+      > If you encounter the error that `chrome.exe` is not found in the above path, you can check the installation path first. \
+      > For example, test the 64-bit path on the command line \
+      > `Test-Path "C:\Program Files\Google\Chrome\Application\chrome.exe"`, \
+      > or check the 32-bit path \
+      > `Test-Path "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"`
     - On MacOS
       ```bash
       /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome \ --remote-debugging-port=9222 \ --user-data-dir=/tmp/chrome-mcp-profile
